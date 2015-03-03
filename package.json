@@ -29,5 +29,7 @@
     "index.js",
     "LICENSE"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "psi": "^1.0.6"
+  }
 }
