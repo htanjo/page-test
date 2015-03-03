@@ -1,0 +1,33 @@
+{
+  "name": "page-test",
+  "version": "0.0.0",
+  "description": "Page test",
+  "author": {
+    "name": "Tanjo, Hiroyuki"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/htanjo/page-test/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/htanjo/page-test.git"
+  },
+  "homepage": "https://github.com/htanjo/page-test",
+  "bugs": {
+    "url": "https://github.com/htanjo/page-test/issues"
+  },
+  "keywords": [],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {},
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE"
+  ],
+  "dependencies": {}
+}
