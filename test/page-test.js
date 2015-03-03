@@ -2,18 +2,48 @@
 
 var assert = require('assert');
 var psi = require('psi');
+var meta = require('../lib/meta');
 
 var url = 'https://github.com/';
 
-describe(url, function () {
+describe('Page: ' + url, function () {
 
-  it('marks 90 or over in PageSpeed Insights', function (done) {
-    this.timeout(10000);
-    psi(url, {strategy: 'desktop'}, function (error, data) {
-      assert(!error);
-      assert(data.score >= 90);
-      done();
+  this.timeout(10000);
+
+  describe('PageSpeed Insights', function () {
+
+    it('says 80 or over', function (done) {
+      psi(url, {strategy: 'desktop'}, function (error, data) {
+        assert(data.score >= 80);
+        done();
+      });
     });
+
+  });
+
+  describe('Meta data', function () {
+
+    var results;
+
+    before(function (done) {
+      meta(url, function (error, data) {
+        results = data;
+        done();
+      });
+    });
+
+    it('contains proper title', function () {
+      assert.equal(results.title, 'GitHub · Build software better, together.');
+    });
+
+    it('contains proper description', function () {
+      assert.equal(results.description, 'Build software better, together.');
+    });
+
+    it('contains some keywords', function () {
+      assert(results.keywords && results.keywords.length > 0);
+    });
+
   });
 
 });
