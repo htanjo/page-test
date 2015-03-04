@@ -1,6 +1,7 @@
 'use strict';
 
 var fs = require('fs');
+var path = require('path');
 var mkdirp = require('mkdirp');
 var Handlebars = require('handlebars');
 var opn = require('opn');
@@ -22,9 +23,9 @@ module.exports = function (runner) {
   }
 
   function generate(data) {
-    var dirPath = process.cwd() + '/tmp';
-    var filePath = dirPath + '/results.html';
-    var source = fs.readFileSync(__dirname + '/results.hbs', 'utf-8');
+    var dirPath = path.join(process.cwd(), 'tmp');
+    var filePath = path.join(dirPath, 'results.html');
+    var source = fs.readFileSync(path.join(__dirname, 'results.hbs'), 'utf-8');
     var template = Handlebars.compile(source);
     var html = template(data);
 
