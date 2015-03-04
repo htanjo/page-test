@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Page Test Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+    <style>
+      .suite {
+        margin: 50px 0;
+      }
+      .failed > th,
+      .failed > td {
+        color: #a94442;
+        background-color: #fcefef;
+      }
+      .table-hover .failed:hover > th,
+      .table-hover .failed:hover > td {
+        background-color: #f9e6e6;
+      }
+      .passed .glyphicon {
+        color: #449d44;
+      }
+      .failed .glyphicon {
+        color: #d9534f;
+      }
+      .icon-passed:before {
+        content: "\e013";
+      }
+      .icon-failed:before {
+        content: "\e014";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Page Test Results</h1>
+      {{#each suites}}
+        {{#each suites}}
+          <div class="suite">
+            <h2 class="h4"><a href="{{title}}">{{title}}</a></h2>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th class="col-md-1"></th>
+                  <th class="col-md-3">Test</th>
+                  <th class="col-md-6">Description</th>
+                  <th class="col-md-2">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+              {{#each suites}}
+                {{#each tests}}
+                <tr class="{{state}}">
+                  <td><span class="glyphicon icon-{{state}}"></span></td>
+                  <td>{{../title}}</td>
+                  <td>{{title}}</td>
+                  <td>{{state}}</td>
+                </tr>
+                {{/each}}
+              {{/each}}
+              </tbody>
+            </table>
+          </div>
+        {{/each}}
+      {{/each}}
+    </div>
+  </body>
+</html>

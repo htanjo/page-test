@@ -8,7 +8,7 @@ var urls = require('./fixtures/urls.json');
 var expected = require('./fixtures/expected.json');
 
 urls.forEach(function (url) {
-  describe('URL: ' + url, function () {
+  describe(url, function () {
 
     this.timeout(10000);
 
