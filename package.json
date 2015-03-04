@@ -31,6 +31,7 @@
   ],
   "dependencies": {
     "cheerio": "^0.18.0",
+    "mocha": "^2.1.0",
     "psi": "^1.0.6",
     "request": "^2.53.0"
   }
