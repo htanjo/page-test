@@ -1,6 +1,6 @@
 'use strict';
 
-var assert = require('assert');
+var assert = require('chai').assert;
 var psi = require('psi');
 var meta = require('../lib/meta');
 
@@ -18,7 +18,7 @@ urls.forEach(function (url) {
 
       it('says 85 or over', function (done) {
         psi(url, {strategy: 'desktop'}, function (error, data) {
-          assert(data.score >= 85);
+          assert.operator(data.score, '>=', 85);
           done();
         });
       });
@@ -42,7 +42,11 @@ urls.forEach(function (url) {
           assert.equal(results.title, expectation);
         }
         else {
-          assert(!!results.title);
+          assert.isString(results.title);
+        }
+        if (typeof results.title === 'string') {
+          assert.notEqual(results.title, '');
+          assert.isBelow(results.title.length, 50);
         }
       });
 
@@ -52,7 +56,11 @@ urls.forEach(function (url) {
           assert.equal(results.description, expectation);
         }
         else {
-          assert(!!results.description);
+          assert.isString(results.description);
+        }
+        if (typeof results.description === 'string') {
+          assert.notEqual(results.description, '');
+          assert.isBelow(results.description.length, 200);
         }
       });
 
@@ -62,7 +70,10 @@ urls.forEach(function (url) {
           assert.equal(results.keywords, expectation);
         }
         else {
-          assert(!!results.keywords);
+          assert.isString(results.keywords);
+        }
+        if (typeof results.keywords === 'string') {
+          assert.notEqual(results.keywords, '');
         }
       });
 
