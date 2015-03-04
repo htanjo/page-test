@@ -4,7 +4,7 @@
 
 ## Usage
 ```shell
-$ git clone https://github.com/htanjo/page-test.git
+$ git clone https://github.com/htanjo/page-test.git && cd page-test
 $ npm install
 $ node .
 ```
