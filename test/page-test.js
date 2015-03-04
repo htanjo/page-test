@@ -16,7 +16,7 @@ urls.forEach(function (url) {
 
       this.timeout(20000);
 
-      it('says 85 or over', function (done) {
+      it('scores 85 or over', function (done) {
         psi(url, {strategy: 'desktop'}, function (error, data) {
           assert.operator(data.score, '>=', 85);
           done();
