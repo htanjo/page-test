@@ -15,5 +15,6 @@ $ node .
 - **Framework:** [Moca](http://mochajs.org/)
 - **Test spec:** [test/page-test.js](./test/page-test.js)
 - **Test plugins:** [lib/](./lib) and other modules
-- **Targets:** [test/fixtures/url.json](./test/fixtures/urls.json)
-- **Expectation:** [test/fixtures/expected.json](./test/fixtures/expected.json)
+- **Reporter:** [reporters/](./reporters)
+- **Target data:** [test/fixtures/url.json](./test/fixtures/urls.json)
+- **Expectation data:** [test/fixtures/expected.json](./test/fixtures/expected.json)
